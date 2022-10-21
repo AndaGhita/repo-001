@@ -3,9 +3,39 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "game.h"
 
-int game (int anvandare , int datorn);
+int game (int anvandare , int datorn ){
+
+    
+    // Om både användaren och datorn har valt samma sak
+    if (anvandare == datorn)
+        return -1;
+ 
+    // Om användarens val är sten och datorns val är papper
+    if (anvandare == 0 && datorn == 2)
+        return 0;
+ 
+    // Om användarens val är papper och datorns val är sten
+    else if (anvandare == 2 && datorn == 0) return 1;
+ 
+    // Om användarens val är sten och datorns val är sax
+    if (anvandare == 0 && datorn == 1)
+        return 1;
+ 
+    // Om användarens val är sax och datorns val är sten
+    else if (anvandare == 1 && datorn == 0)
+        return 0;
+ 
+    // Om användarens val är papper och datorns val är sax
+    if (anvandare == 2 && datorn == 1)
+        return 0;
+ 
+    // Om användarens val är sax och datorns val är papper
+    else if (anvandare == 1 && datorn == 2)
+        return 1;
+        
+}
+
 
 int main()
 {   
@@ -103,35 +133,4 @@ int main()
     }
 
     return 0;
-}
-int Game (int anvandare , int datorn ){
-
-    
-    // Om både användaren och datorn har valt samma sak
-    if (anvandare == datorn)
-        return -1;
- 
-    // Om användarens val är sten och datorns val är papper
-    if (anvandare == 0 && datorn == 2)
-        return 0;
- 
-    // Om användarens val är papper och datorns val är sten
-    else if (anvandare == 2 && datorn == 0) return 1;
- 
-    // Om användarens val är sten och datorns val är sax
-    if (anvandare == 0 && datorn == 1)
-        return 1;
- 
-    // Om användarens val är sax och datorns val är sten
-    else if (anvandare == 1 && datorn == 0)
-        return 0;
- 
-    // Om användarens val är papper och datorns val är sax
-    if (anvandare == 2 && datorn == 1)
-        return 0;
- 
-    // Om användarens val är sax och datorns val är papper
-    else if (anvandare == 1 && datorn == 2)
-        return 1;
-        
 }
